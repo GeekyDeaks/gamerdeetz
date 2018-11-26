@@ -1,0 +1,16 @@
+{
+  "name": "desdemona",
+  "version": "1.0.0",
+  "description": "Discord bot for persisting platform details",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sdeaks@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.1.0",
+    "winston": "^3.1.0"
+  }
+}
