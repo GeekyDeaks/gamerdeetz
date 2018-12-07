@@ -10,6 +10,7 @@ require('dotenv').config()
 const logger = require('./lib/logger')
 const discord = require('./lib/discord')
 const cmd = require('./cmd')
+const db = require('./lib/db')
 
 async function start() {
 
@@ -20,9 +21,13 @@ async function start() {
             process.exit(1)
         }
     })
+    logger.info('starting gamerdeets bot')
 
-    logger.info('starting bot')
+    logger.info('initalising DB')
+    await db.sync()
+    logger.info('connecting to discord')
     await discord.login(process.env.DISCORD_TOKEN)
+    logger.info('gamerdeets bot ready!')
     discord.client.on('message', cmd.messageHandler)
 }
 

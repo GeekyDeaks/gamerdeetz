@@ -16,9 +16,9 @@ fs
         return (file.indexOf('.') !== 0) && (file !== 'index.js')
     })
     .forEach(function (file) {
-        var filePath = path.join(__dirname, file)
+        const filePath = path.join(__dirname, file)
         logger.debug('checking command file: %s', filePath)
-        var cmd = require(filePath)
+        const cmd = require(filePath)
         if (!cmd) {
             return logger.error('failed to load command file: %s', filePath)
         }
